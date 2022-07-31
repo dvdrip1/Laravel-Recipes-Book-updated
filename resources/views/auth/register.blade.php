@@ -4,9 +4,9 @@
 <section>
 <!-- I editted mine, in order to make it fit with my CSS
     just removed some bootstrap classes and that was it,
-    as long as you dont remove any laravel  code you will be fine
+    as long as you dont remove any laravel code you will be fine
 -->
-        <h2>Register.</h2>
+        <h2>Register</h2>
         <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
@@ -53,10 +53,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm">Confirm Password</label>
-
-                           
-                                <input id="password-confirm" type="password" name="password_confirmation" required>
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
                            
                         </div>
 

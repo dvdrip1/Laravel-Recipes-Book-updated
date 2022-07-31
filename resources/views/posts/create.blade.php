@@ -19,7 +19,7 @@
                </div> 
                <div class="form-group">
                     {{Form::label('image','Image')}}
-                    {{Form::file('image', '')}}
+                    {{Form::file('image')}}
                </div> 
                  <div class="form-group">
                     {{Form::label('description','Description')}}
@@ -35,7 +35,7 @@
                </div> 
                <div class="form-group2">
                 <p>Proofread your recipe, make sure the information is clear and there are no missing ingredients</p>   
-                    {{Form::submit('Add Recipe', '')}}
+                    {{Form::submit('Add Recipe')}}
                 </div>
             {!! Form::close() !!}
 

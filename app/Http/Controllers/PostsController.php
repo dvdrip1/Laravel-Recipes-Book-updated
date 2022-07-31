@@ -18,9 +18,6 @@ use Auth;
 
 class PostsController extends Controller
 {
-    
-
-
     // must be inside constructor    
     public function __construct()
     {
@@ -61,16 +58,14 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-
-       
-        //get the request
-        //and validate the fields
+      
+        // get the request and validate the fields
         // now this is the function that stores the data in the database table
 
         //first we validate the incoming request
         $this->validate(
-            //the names match the input names of the form
-            //then we say if it can be null or required
+            // the names match the input names of the form
+            // then we say if it can be null or required
             $request, [
                 'title' => 'required',
                 'preptime' => 'required',
@@ -94,11 +89,9 @@ class PostsController extends Controller
         //----  get the file ready to be stored
          
         $renamedFile =  $filename . "_" . time() . "." . $fileExt;
-
      
         $path = $request->file('image')->storeAs("public/covers", $renamedFile);
 
-     
         $post = new Post;
       
         $post->title = $request->input('title');
@@ -206,14 +199,13 @@ class PostsController extends Controller
             $newFile =  $filename . "_" . time() . "." . $fileExt;
 
             //-------- store the image
-            //prepare the path where the image is going to be saved
+            //-------- prepare the path where the image is going to be saved
             //-------- to get access to the folder create a symlink, run the next code: 
             //-------- php artisan storage:link
             //-------- a new folder will appear in the public folder
             $path = $request->file('image')->storeAs("public/covers", $newFile);
             
                 //------- remove the image that was before
-
 
                 //get the previous name
                 //we get the hidden input name 
@@ -229,9 +221,6 @@ class PostsController extends Controller
                 //it will just add it
 
         }
-
-      
-        dd(Auth::id());
         
         //find the post to update (recipe)
         $post = Post::find($id);
@@ -242,12 +231,8 @@ class PostsController extends Controller
         $post->ingredients = $request->input('ingredients');
         $post->preparation = $request->input('preparation');
 
-       
          //save the post
          $post->save();   
-
-        
-            
 
          //redirect
          return redirect("/posts")->with("success", "Post Updated!");
@@ -261,7 +246,6 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-
         
         $post = Post::find($id);
             
@@ -279,8 +263,6 @@ class PostsController extends Controller
             return redirect("/posts")->with("success", "Post Deleted!");
 
         }
-              
-      
 
     }
 }

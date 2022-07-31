@@ -20,7 +20,7 @@
  
   <div class="ribbon">
   <!--We access the current user data using Auth:user->property or table value -->
-         <h2>Dashboard | <a href="/projects/php/simpleblog/public/user/{{Auth::user()->id}}/edit">Edit</a></h2>
+         <h2>Dashboard | <a href="/user/{{Auth::user()->id}}/edit">Edit</a></h2>
          <h3>{{ Auth::user()->name }} </h3>
          <p>{{ Auth::user()->email }}</p>
 

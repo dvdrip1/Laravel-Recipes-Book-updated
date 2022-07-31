@@ -37,7 +37,7 @@
                     <p>Proofread your recipe, make sure the information is clear and there are no missing ingredients</p>   
                     <div class="form-edit-meta">
                       
-                        {{ Form::submit('Edit Recipe', '')}}
+                        {{ Form::submit('Edit Recipe')}}
 
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                @if (Auth::user()->id == $post->user_id)
                  {!! Form::open(["action" => ["PostsController@destroy", $post->id], "method" => "POST", "class" => "delete"]) !!}
                 {{Form::hidden("_method","DELETE")}}
-                {{Form::submit('Delete This Post', '')}}
+                {{Form::submit('Delete This Post')}}
             {!! Form::close() !!}   
                @endif 
             @endif

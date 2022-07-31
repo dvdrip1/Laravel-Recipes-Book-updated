@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> -->
@@ -39,7 +39,7 @@
             @yield("content")
         </main>  
            <footer>
-            <p>My Recipes Book made by aldocaava.</p>
+            <p>My Recipes Book - made by aldocaava (2018). Updated by dvdrip (2002)</p>
         </footer>
         </div>
      

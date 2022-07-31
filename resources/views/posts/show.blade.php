@@ -32,7 +32,7 @@
             @if (!Auth::guest())
                @if (Auth::user()->id == $post->user_id)
                 <div>
-                    <p><a class="editPost" href="/projects/php/simpleblog/public/posts/{{$post->id}}/edit">Edit this post</a></p>
+                    <p><a class="editPost" href="/posts/{{$post->id}}/edit">Edit this post</a></p>
                 </div>       
                @endif 
             @endif

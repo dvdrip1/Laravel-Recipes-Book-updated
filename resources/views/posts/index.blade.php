@@ -10,7 +10,7 @@
             {{-- we use the object notation for OOP $post->property --}}
                 <div class="recipe">
                     <div class="image">
-                        <a href="/projects/php/simpleblog/public/posts/{{$post->id}}">
+                        <a href="/posts/{{$post->id}}">
                             <div class="outcover" style='background:url("storage/covers/{{$post->cover}}")center;background-size:100%'></div>
                         </a>
                     </div>

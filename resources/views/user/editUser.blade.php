@@ -26,24 +26,20 @@
                     <p>You can change these settings at any time.</p>   
                     <div class="form-edit-meta">
                       
-                        {{ Form::submit('Edit User', '')}}
+                        {{ Form::submit('Edit User')}}
 
                     </div>
                 </div>
                 {{Form::hidden("_method", "PUT")}}
 
             {!! Form::close() !!}
-
-                               
                       
     </section>
-    {{-- this is the way we delete the post
-        use the destroy function of the controller
-        and pass the ID, just like the update,
-        that way laravel knows what to delete
-     --}}
-       {!! Form::open(["action" => ["UserController@destroy", $user->id], "method" => "POST", "class" => "delete"]) !!}
+
+    {{-- this is the way we delete the post. Use the destroy function of the controller and pass the ID, just like the update, that way laravel knows what to delete --}}
+
+    {!! Form::open(["action" => ["UserController@destroy", $user->id], "method" => "POST", "class" => "delete"]) !!}
                 {{Form::hidden("_method","DELETE")}}
-                {{Form::submit('Delete User', '')}}
+                {{Form::submit('Delete User')}}
             {!! Form::close() !!}   
 @endsection
